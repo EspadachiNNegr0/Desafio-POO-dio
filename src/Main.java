@@ -7,53 +7,60 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
+        // Criando Cursos
         Curso curso1 = new Curso();
-        curso1.setTitulo("curso java");
-        curso1.setDescricao("descrição curso java");
-        curso1.setCargaHoraria(8);
+        curso1.setTitulo("Dominando React Professional");
+        curso1.setDescricao("Aprenda hooks, context API e performance no Front-end");
+        curso1.setCargaHoraria(12);
 
         Curso curso2 = new Curso();
-        curso2.setTitulo("curso js");
-        curso2.setDescricao("descrição curso js");
-        curso2.setCargaHoraria(4);
+        curso2.setTitulo("Node.js de alto nível");
+        curso2.setDescricao("Arquitetura de microsserviços e bancos de dados NoSQL");
+        curso2.setCargaHoraria(10);
 
+        // Criando Mentoria
         Mentoria mentoria = new Mentoria();
-        mentoria.setTitulo("mentoria de java");
-        mentoria.setDescricao("descrição mentoria java");
+        mentoria.setTitulo("Carreira Internacional na Tecnologia");
+        mentoria.setDescricao("Dicas sobre LinkedIn, currículo em inglês e processos seletivos");
         mentoria.setData(LocalDate.now());
 
+        // Configurando o Bootcamp
         Bootcamp bootcamp = new Bootcamp();
-        bootcamp.setNome("Bootcamp Java Developer");
-        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
+        bootcamp.setNome("Bootcamp Fullstack Ninja");
+        bootcamp.setDescricao("Torne-se um desenvolvedor completo do zero ao deploy");
         bootcamp.getConteudos().add(curso1);
         bootcamp.getConteudos().add(curso2);
         bootcamp.getConteudos().add(mentoria);
 
-        Dev devCamila = new Dev();
-        devCamila.setNome("Camila");
-        devCamila.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
-        devCamila.progredir();
-        devCamila.progredir();
+        // Exemplo com a Dev "Ana"
+        Dev devAna = new Dev();
+        devAna.setNome("Ana Paula");
+        devAna.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos de Ana:" + devAna.getConteudosInscritos());
+
+        devAna.progredir(); // Concluiu o primeiro curso
+
         System.out.println("-");
-        System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
-        System.out.println("Conteúdos Concluídos Camila:" + devCamila.getConteudosConcluidos());
-        System.out.println("XP:" + devCamila.calcularTotalXp());
+        System.out.println("Conteúdos Inscritos de Ana:" + devAna.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos de Ana:" + devAna.getConteudosConcluidos());
+        System.out.println("XP Acumulado:" + devAna.calcularTotalXp());
 
-        System.out.println("-------");
+        System.out.println("------------------------------------");
 
-        Dev devJoao = new Dev();
-        devJoao.setNome("Joao");
-        devJoao.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
-        devJoao.progredir();
-        devJoao.progredir();
-        devJoao.progredir();
+        // Exemplo com o Dev "Carlos"
+        Dev devCarlos = new Dev();
+        devCarlos.setNome("Carlos Silva");
+        devCarlos.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos de Carlos:" + devCarlos.getConteudosInscritos());
+
+        // Carlos concluiu tudo!
+        devCarlos.progredir();
+        devCarlos.progredir();
+        devCarlos.progredir();
+
         System.out.println("-");
-        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
-        System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
-        System.out.println("XP:" + devJoao.calcularTotalXp());
-
+        System.out.println("Conteúdos Inscritos de Carlos:" + devCarlos.getConteudosInscritos());
+        System.out.println("Conteúdos Concluidos de Carlos:" + devCarlos.getConteudosConcluidos());
+        System.out.println("XP Acumulado:" + devCarlos.calcularTotalXp());
     }
-
 }
